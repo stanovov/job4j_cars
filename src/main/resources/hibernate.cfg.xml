@@ -15,5 +15,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.jdbc.time_zone">Europe/Moscow</property>
 
+        <mapping class="ru.job4j.model.User" />
+        <mapping class="ru.job4j.model.BodyType" />
+        <mapping class="ru.job4j.model.Brand" />
+        <mapping class="ru.job4j.model.Ad" />
     </session-factory>
 </hibernate-configuration>
