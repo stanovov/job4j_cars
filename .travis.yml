@@ -1,0 +1,13 @@
+language: java
+
+jdk:
+  - openjdk14
+
+sudo: false
+
+notifications:
+  email:
+    recipients:
+      - sestanovov@gmail.com
+    on_success: never
+    on_failure: always
