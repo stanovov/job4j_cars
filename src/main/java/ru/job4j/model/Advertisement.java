@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ads")
-public class Ad {
+@Table(name = "advertisements")
+public class Advertisement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,16 +34,16 @@ public class Ad {
     @JoinColumn(name = "author_id", nullable = false)
     private User author;
 
-    public static Ad of(String description, boolean sold, Brand brand,
-                        BodyType bodyType, User author) {
-        Ad ad = new Ad();
-        ad.setDescription(description);
-        ad.setCreated(new Date(System.currentTimeMillis()));
-        ad.setSold(sold);
-        ad.setBrand(brand);
-        ad.setBodyType(bodyType);
-        ad.setAuthor(author);
-        return ad;
+    public static Advertisement of(String description, boolean sold, Brand brand,
+                                   BodyType bodyType, User author) {
+        Advertisement advertisement = new Advertisement();
+        advertisement.setDescription(description);
+        advertisement.setCreated(new Date(System.currentTimeMillis()));
+        advertisement.setSold(sold);
+        advertisement.setBrand(brand);
+        advertisement.setBodyType(bodyType);
+        advertisement.setAuthor(author);
+        return advertisement;
     }
 
     public int getId() {
@@ -110,8 +110,8 @@ public class Ad {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Ad ad = (Ad) o;
-        return id == ad.id;
+        Advertisement advertisement = (Advertisement) o;
+        return id == advertisement.id;
     }
 
     @Override
