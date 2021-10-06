@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS advertisements (
     description TEXT NOT NULL,
     created TIMESTAMP NOT NULL,
     sold BOOLEAN NOT NULL,
+    photo BOOLEAN NOT NULL,
     brand_id INT NOT NULL REFERENCES brands(id),
     body_type_id INT NOT NULL REFERENCES body_types(id),
     author_id INT NOT NULL REFERENCES users(id)
@@ -50,4 +51,4 @@ VALUES ('LADA (ВАЗ)'), ('Audi'), ('BMW'),
        ('Renault'), ('Skoda'), ('SsangYong'),
        ('Subaru'), ('Suzuki'), ('Toyota'),
        ('Volkswagen'), ('Volvo'), ('ГАЗ'),
-       ('УАЗ'), ('УАЗ');
+       ('УАЗ');

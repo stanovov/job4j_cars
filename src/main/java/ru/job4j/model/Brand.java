@@ -52,4 +52,12 @@ public class Brand {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return "Brand{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + '}';
+    }
 }

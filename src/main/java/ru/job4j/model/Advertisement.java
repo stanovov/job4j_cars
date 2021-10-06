@@ -22,6 +22,9 @@ public class Advertisement {
     @Column(nullable = false)
     private boolean sold;
 
+    @Column(nullable = false)
+    private boolean photo;
+
     @ManyToOne
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
@@ -34,12 +37,10 @@ public class Advertisement {
     @JoinColumn(name = "author_id", nullable = false)
     private User author;
 
-    public static Advertisement of(String description, boolean sold, Brand brand,
-                                   BodyType bodyType, User author) {
+    public static Advertisement of(String description, Brand brand, BodyType bodyType, User author) {
         Advertisement advertisement = new Advertisement();
         advertisement.setDescription(description);
         advertisement.setCreated(new Date(System.currentTimeMillis()));
-        advertisement.setSold(sold);
         advertisement.setBrand(brand);
         advertisement.setBodyType(bodyType);
         advertisement.setAuthor(author);
@@ -76,6 +77,14 @@ public class Advertisement {
 
     public void setSold(boolean sold) {
         this.sold = sold;
+    }
+
+    public boolean isPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(boolean photo) {
+        this.photo = photo;
     }
 
     public Brand getBrand() {
@@ -117,5 +126,19 @@ public class Advertisement {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Advertisement{"
+                + "id=" + id
+                + ", description='" + description + '\''
+                + ", created=" + created
+                + ", sold=" + sold
+                + ", photo=" + photo
+                + ", brand=" + brand
+                + ", bodyType=" + bodyType
+                + ", author=" + author
+                + '}';
     }
 }

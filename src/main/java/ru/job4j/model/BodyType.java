@@ -52,4 +52,12 @@ public class BodyType {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return "BodyType{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + '}';
+    }
 }
