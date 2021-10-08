@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script type='text/javascript' src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/reg.js"></script>
+
+    <title>Регистрация</title>
+</head>
+<body>
+<div class="container pt-3">
+
+    <div class="row">
+        <div class="card" style="width: 100%">
+
+            <div class="card-header">
+                Регистрация
+            </div>
+
+            <div class="card-body">
+                <form onsubmit="signUp(); return false;">
+                    <div class="form-row">
+                        <div class="col pb-1">
+                            <small for="firstName">Имя:</small>
+                            <input type="text" class="form-control" id="firstName" required
+                                   oninvalid="this.setCustomValidity('Введите своё имя')"
+                                   oninput="this.setCustomValidity('')"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-1">
+                            <small>Фамилия:</small>
+                            <input type="text" class="form-control" id="lastName" required
+                                   oninvalid="this.setCustomValidity('Введите свою фамилию')"
+                                   oninput="this.setCustomValidity('')"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-4">
+                            <small for="phone">Номер телефона</small>
+                            <input type="text" class="form-control" id="phone" data-inputmask="'alias': 'phonebe'" required
+                                   oninvalid="this.setCustomValidity('Введите свой телефон')"
+                                   oninput="this.setCustomValidity('')"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <small>Электронная почта:</small>
+                            <input type="text" class="form-control" id="email" data-inputmask="'alias': 'email'" required
+                                   oninvalid="this.setCustomValidity('Введите свой email')"
+                                   oninput="this.setCustomValidity('')"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <small>Пароль</small>
+                            <input type="password" class="form-control" id="password" required
+                                   oninvalid="this.setCustomValidity('Введите пароль')"
+                                   oninput="this.setCustomValidity('')"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-4">
+                            <small>Повторите пароль</small>
+                            <input type="password" class="form-control" id="repeatPassword" required
+                                   oninvalid="this.setCustomValidity('Повторите пароль')"
+                                   oninput="this.setCustomValidity('')"/>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success pull-left">Зарегистрироваться</button>
+                    <button type="button" class="btn btn-light pull-right" onclick="Cancel()">Отмена</button>
+                    <div id="notification" style="color:red; font-weight: bold; margin: 30px 0;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

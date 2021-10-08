@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script type='text/javascript' src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/login.js"></script>
+
+    <title>Авторизация</title>
+</head>
+<body>
+<div class="container pt-3">
+
+    <div class="row">
+        <div class="card" style="width: 100%">
+
+            <div class="card-header">
+                Авторизация
+            </div>
+
+            <div class="card-body">
+                <form onsubmit="login(); return false;">
+                    <div class="form-group">
+                        <label>Электронная почта</label>
+                        <input type="text" class="form-control" id="email" required
+                               oninvalid="this.setCustomValidity('Введите свой email')"
+                               oninput="this.setCustomValidity('')"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-left">Войти</button>
+                    <button type="button" class="btn btn-light pull-right m1-2" onclick="goToRegistrationPage()">Регистрация</button>
+                    <div id="notification" style="color:red; font-weight: bold; margin: 30px 0;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

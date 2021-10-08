@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="js/general.js"></script>
+    <script src="js/my.js"></script>
+
+    <title>Мои объявления</title>
+</head>
+<body>
+<div class="container">
+
+    <ul class="nav justify-content-end" id="nav">
+    </ul>
+
+    <hr class="my-4">
+
+    <div class="form-row justify-content-end align-items-center mb-0 pt-0 pb-0">
+        <div class="form-group col-md-2">
+            <p class="small mb-0 me-2 text-muted">Статус:</p>
+            <select class="custom-select input-sm" id="statusFilter" onchange="findAdvertisements()">
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <p class="small mb-0 me-2 text-muted">Сортировка:</p>
+            <select class="custom-select input-sm" id="sortingType" onchange="findAdvertisements()">
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <p class="small mb-0 me-2 text-muted">Время размещения:</p>
+            <select class="custom-select input-sm" id="periodFilter" onchange="findAdvertisements()">
+            </select>
+        </div>
+    </div>
+
+    <table class="table table-hover mb-0" id="table">
+        <tbody id="tbody">
+        <tr>
+            <td class="align-middle" style="width: 35%"><strong>Ford, Focus 3</strong><br><br>Седан<br><br>Автомат</td>
+            <td class="align-middle" style="width: 35%"><strong>750 000 р.</strong><br><br>2012 г.<br><br>77 213 км</td>
+            <td class="align-middle">
+                <div class="top-cover center-block">
+                    <button type="button" class="btn btn-success">Редактировать</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="js/general.js"></script>
+    <script src="js/index.js"></script>
+
+    <title>Объявления автомобилей</title>
+</head>
+<body>
+<div class="container">
+
+    <ul class="nav justify-content-end" id="nav">
+    </ul>
+
+    <hr class="my-4">
+
+    <form onsubmit="findAdvertisements(); return false;">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <p class="small mb-0 me-2 text-muted">Марка:</p>
+                <select class="custom-select input-sm" id="brand" onchange="displayModelFilter()">
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <p class="small mb-0 me-2 text-muted">Модель:</p>
+                <select class="custom-select input-sm" id="model">
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <p class="small mb-0 me-2 text-muted">Кузов:</p>
+                <select class="custom-select input-sm" id="bodyType">
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <p class="small mb-0 me-2 text-muted">Коробка:</p>
+                <select class="custom-select input-sm" id="transmission">
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <p class="small mb-0 me-2 text-muted">Год от:</p>
+                <select class="custom-select input-sm" id="stProdYear">
+                    <option value="0" selected>Не выбран</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <p class="small mb-0 me-2 text-muted">до:</p>
+                <select class="custom-select input-sm" id="endProdYear">
+                    <option value="0" selected>Не выбран</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <p class="small mb-0 me-2 text-muted">Пробег от:</p>
+                <input type="number" min="0" class="form-control" id="stMileage" onchange="negativeInputNumberControl(this)">
+            </div>
+            <div class="form-group col-md-2">
+                <p class="small mb-0 me-2 text-muted">до:</p>
+                <input type="number" min="0" class="form-control" id="endMileage" onchange="negativeInputNumberControl(this)">
+            </div>
+            <div class="form-group col-md-2">
+                <p class="small mb-0 me-2 text-muted">Цена от:</p>
+                <input type="number" min="0" class="form-control" id="stPrice" onchange="negativeInputNumberControl(this)">
+            </div>
+            <div class="form-group col-md-2">
+                <p class="small mb-0 me-2 text-muted">до:</p>
+                <input type="number" min="0" class="form-control" id="endPrice" onchange="negativeInputNumberControl(this)">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-9">
+            </div>
+            <div class="form-group col-md-2">
+                <input type="checkbox" class="form-check-input" id="photo">
+                <label class="form-check-label" for="photo">Только с фото</label>
+            </div>
+            <div class="form-group col-md-1">
+                <div class="form-row justify-content-end">
+                    <button type="submit" class="btn btn-info">Показать</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <hr class="my-4">
+
+    <div class="form-row justify-content-end align-items-center mb-4 pt-2 pb-2">
+        <div class="col col-lg-3">
+            <p class="small mb-0 me-2 text-muted">Сортировка:</p>
+            <select class="custom-select input-sm" id="sortingType" onchange="findAdvertisements()">
+            </select>
+        </div>
+        <div class="col col-lg-2">
+            <p class="small mb-0 me-2 text-muted">Время размещения:</p>
+            <select class="custom-select input-sm" id="periodFilter" onchange="findAdvertisements()">
+            </select>
+        </div>
+    </div>
+
+    <table class="table table-hover mb-0" id="table">
+        <tbody id="tbody">
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

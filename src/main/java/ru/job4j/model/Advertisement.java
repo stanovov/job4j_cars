@@ -25,24 +25,39 @@ public class Advertisement {
     @Column(nullable = false)
     private boolean photo;
 
+    @Column(nullable = false)
+    private int mileage;
+
+    @Column(precision = 10, scale = 2, nullable = false)
+    private double price;
+
+    @Column(name = "production_year", nullable = false)
+    private int productionYear;
+
     @ManyToOne
-    @JoinColumn(name = "brand_id", nullable = false)
-    private Brand brand;
+    @JoinColumn(name = "model_id", nullable = false)
+    private Model model;
 
     @ManyToOne
     @JoinColumn(name = "body_type_id", nullable = false)
     private BodyType bodyType;
 
     @ManyToOne
+    @JoinColumn(name = "transmission_id", nullable = false)
+    private Transmission transmission;
+
+    @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     private User author;
 
-    public static Advertisement of(String description, Brand brand, BodyType bodyType, User author) {
+    public static Advertisement of(String description, Model model, BodyType bodyType,
+                                   Transmission transmission, User author) {
         Advertisement advertisement = new Advertisement();
         advertisement.setDescription(description);
         advertisement.setCreated(new Date(System.currentTimeMillis()));
-        advertisement.setBrand(brand);
+        advertisement.setModel(model);
         advertisement.setBodyType(bodyType);
+        advertisement.setTransmission(transmission);
         advertisement.setAuthor(author);
         return advertisement;
     }
@@ -87,12 +102,36 @@ public class Advertisement {
         this.photo = photo;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public int getMileage() {
+        return mileage;
     }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getProductionYear() {
+        return productionYear;
+    }
+
+    public void setProductionYear(int productionYear) {
+        this.productionYear = productionYear;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
     }
 
     public BodyType getBodyType() {
@@ -101,6 +140,14 @@ public class Advertisement {
 
     public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
     }
 
     public User getAuthor() {
@@ -136,8 +183,12 @@ public class Advertisement {
                 + ", created=" + created
                 + ", sold=" + sold
                 + ", photo=" + photo
-                + ", brand=" + brand
+                + ", mileage=" + mileage
+                + ", price=" + price
+                + ", model=" + model
                 + ", bodyType=" + bodyType
+                + ", transmission=" + transmission
+                + ", productionYear=" + productionYear
                 + ", author=" + author
                 + '}';
     }

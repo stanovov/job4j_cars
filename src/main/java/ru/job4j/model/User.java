@@ -26,6 +26,10 @@ public class User {
     @Column(nullable = false)
     private String phone;
 
+    public static User of(String email, String password) {
+        return of(email, password, "", "", "");
+    }
+
     public static User of(String email, String password, String firstName,
                           String lastName, String phone) {
         User user = new User();

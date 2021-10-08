@@ -19,5 +19,11 @@
         <mapping class="ru.job4j.model.BodyType" />
         <mapping class="ru.job4j.model.Brand" />
         <mapping class="ru.job4j.model.Advertisement" />
+        <mapping class="ru.job4j.model.Transmission" />
+        <mapping class="ru.job4j.model.ProductionYear" />
+        <mapping class="ru.job4j.model.SortingType" />
+        <mapping class="ru.job4j.model.PeriodFilter" />
+        <mapping class="ru.job4j.model.StatusFilter" />
+        <mapping class="ru.job4j.model.Model" />
     </session-factory>
 </hibernate-configuration>

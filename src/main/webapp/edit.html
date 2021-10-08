@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="js/general.js"></script>
+    <script src="js/edit.js"></script>
+
+    <title id="title">Новое объявление</title>
+</head>
+<body>
+<div class="container">
+
+    <ul class="nav justify-content-end" id="nav">
+    </ul>
+
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="card" style="width: 100%">
+            <div class="card-header text-center">
+                <strong id="heading">Новое объявление</strong>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <div class="form-group" id="createdFormGroup" hidden>
+                                <strong>Дата размещения: </strong>
+                                <label id="created"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Марка:</p>
+                                <select class="custom-select input-sm" id="brand" onclick="changeBrand()">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Модель:</p>
+                                <select class="custom-select input-sm" id="model">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Кузов:</p>
+                                <select class="custom-select input-sm" id="bodyType">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Коробка:</p>
+                                <select class="custom-select input-sm" id="transmission">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Год:</p>
+                                <select class="custom-select input-sm" id="prodYear">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Пробег:</p>
+                                <input type="number" min="0" class="form-control" id="mileage" value="0" onchange="negativeInputNumberControl(this)">
+                            </div>
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Цена:</p>
+                                <input type="number" min="0" class="form-control"  id="price" value="0" onchange="negativeInputNumberControl(this)">
+                            </div>
+                            <div class="form-group" id="soldFormGroup" hidden>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sold">
+                                    <label class="form-check-label" for="sold">Продано</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col pb-2">
+                            <div class="form-row">
+                                <img id="photo" class="rounded float-left d-block form-group" src="#" width="560px" height="315px">
+                                <div class="form-group col-md-6">
+                                    <input id="selectPhoto" type="file" class="form-control-file" accept="image/*" onchange="changePhoto(this)">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <a href="#" onclick="clearPhoto()">
+                                        <i class="fa fa-trash mr-3 text-dark"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <div class="form-group">
+                                <p class="small mb-0 me-2 text-muted">Описание:</p>
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                            <button type="button" class="btn btn-success pull-left" onclick="saveAdvertisement()" id="btnSave">Сохранить</button>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button type="button" class="btn btn-light pull-left  m1-2" onclick="goToMainPage()">Назад</button>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button type="button" class="btn btn-danger pull-left m1-2" onclick="deleteAdvertisement()" id="btnDelete" hidden>Удалить</button>
+                        </div>
+                        <div class="col-auto my-1">
+                            <label id="notification" style="color:red; font-weight: bold"></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

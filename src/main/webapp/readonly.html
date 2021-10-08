@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="js/general.js"></script>
+    <script src="js/readonly.js"></script>
+
+    <title id="title">Объявление</title>
+</head>
+<body>
+<div class="container">
+
+    <ul class="nav justify-content-end" id="nav">
+    </ul>
+
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="card" style="width: 100%">
+            <div class="card-header text-center">
+                <strong>Объявление</strong>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <h5 class="text-center">Основная информация</h5>
+                            <div class="form-group">
+                                <strong>Дата размещения: </strong>
+                                <label id="created"></label>
+                                <br>
+                                <strong>Продано:</strong>
+                                <label id="sold"></label>
+                                <br>
+                                <strong>Марка:</strong>
+                                <label id="brand"></label>
+                                <br>
+                                <strong>Модель:</strong>
+                                <label id="model"></label>
+                                <br>
+                                <strong>Кузов:</strong>
+                                <label id="bodyType"></label>
+                                <br>
+                                <strong>Коробка:</strong>
+                                <label id="transmission"></label>
+                                <br>
+                                <strong>Год:</strong>
+                                <label id="productionYear"></label>
+                                <br>
+                                <strong>Пробег:</strong>
+                                <label id="mileage"></label>
+                                <br>
+                                <strong>Цена:</strong>
+                                <label id="price"></label>
+                            </div>
+                            <h5 class="text-center">Контакты</h5>
+                            <div class="form-group">
+                                <strong>Имя:</strong>
+                                <label id="firstName"></label>
+                                <br>
+                                <strong>Телефон:</strong>
+                                <label id="phone"></label>
+                                <br>
+                                <strong>Email:</strong>
+                                <label id="email"></label>
+                            </div>
+                        </div>
+                        <div class="col pb-2">
+                            <img id="photo" class="rounded float-left d-block form-group"
+                                 src="#"
+                                 width="560px" height="315px">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col pb-2">
+                            <h5 class="text-center">Описание</h5>
+                            <div class="form-group">
+                                <p class="text-break" id="description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
