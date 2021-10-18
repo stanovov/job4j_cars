@@ -2,6 +2,7 @@ package ru.job4j.servlet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.job4j.services.Config;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +22,9 @@ public class DeletePhotoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
-        Path path = Path.of("C:\\images\\advertisements\\" + id);
+        Path path = Path.of(
+                Config.instOf().getProperty("images-path") + id
+        );
         String response = "200 OK";
         if (Files.exists(path) && Files.isRegularFile(path)) {
             try {

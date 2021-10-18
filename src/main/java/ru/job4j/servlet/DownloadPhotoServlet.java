@@ -1,5 +1,7 @@
 package ru.job4j.servlet;
 
+import ru.job4j.services.Config;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +16,12 @@ public class DownloadPhotoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
-        Path path = Path.of("C:\\images\\advertisements\\" + id);
+        Path path = Path.of(
+                Config.instOf().getProperty("images-path") + id
+        );
         File photo;
         if (!Files.exists(path) || !Files.isRegularFile(path)) {
-            photo = new File("C:\\images\\advertisements\\0.png");
+            photo = new File(Config.instOf().getProperty("blank-image"));
         } else {
             photo = path.toFile();
         }

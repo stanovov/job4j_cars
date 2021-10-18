@@ -6,6 +6,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.job4j.services.Config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -30,7 +31,9 @@ public class UploadPhotoServlet extends HttpServlet {
         String response = "200 OK";
         try {
             List<FileItem> items = upload.parseRequest(req);
-            File folder = new File("C:\\images\\advertisements\\");
+            File folder = new File(
+                    Config.instOf().getProperty("images-path")
+            );
             if (!folder.exists()) {
                 folder.mkdir();
             }
